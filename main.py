@@ -1,5 +1,4 @@
 import customtkinter
-from tkinter import*
 
 
 customtkinter.set_appearance_mode("system")
@@ -32,8 +31,10 @@ class App(customtkinter.CTk):
 #Side Menu buttons
         self.sidebar_button_1 = customtkinter.CTkButton(self.sidebar_frame, text="Backup", command=self.sidebar_button_event1)
         self.sidebar_button_1.grid(row=1, column=0, padx=20, pady=10)
-        self.sidebar_button_2 = customtkinter.CTkButton(self.sidebar_frame, text="Help", command=self.sidebar_button_event2)
+        self.sidebar_button_2 = customtkinter.CTkButton(self.sidebar_frame, text="Create User ID", command=self.sidebar_button_event2)
         self.sidebar_button_2.grid(row=2, column=0, padx=20, pady=10)
+        self.sidebar_button_2 = customtkinter.CTkButton(self.sidebar_frame, text="Help", command=self.sidebar_button_event3)
+        self.sidebar_button_2.grid(row=3, column=0, padx=20, pady=10)
 #Side Menu OptionMenu's
         self.appearance_mode_label = customtkinter.CTkLabel(self.sidebar_frame, text="Appearance Mode:", anchor="w")
         self.appearance_mode_label.grid(row=5, column=0, padx=20, pady=(10, 0))
@@ -55,6 +56,9 @@ class App(customtkinter.CTk):
         print("Backup")
 
     def sidebar_button_event2(self):
+        print("Create User ID")
+
+    def sidebar_button_event3(self):
         print("Help")
 
 
