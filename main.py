@@ -53,7 +53,8 @@ class App(customtkinter.CTk):
         customtkinter.set_widget_scaling(new_scaling_float)
 
     def sidebar_button_event1(self):
-        print("Backup")
+        self.entry1 = customtkinter.CTkEntry(self, placeholder_text="File path")
+        self.entry1.grid(row=0, column=2, padx=40, pady=10, ipadx=90)
 
     def sidebar_button_event2(self):
         print("Create User ID")
