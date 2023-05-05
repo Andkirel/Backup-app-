@@ -1,6 +1,6 @@
 import customtkinter
 
-customtkinter.set_appearance_mode("system")
+customtkinter.set_appearance_mode("Dark")
 customtkinter.set_default_color_theme("green")
 
 class App(customtkinter.CTk):
@@ -36,11 +36,11 @@ class App(customtkinter.CTk):
 #Side Menu OptionMenu's
         self.appearance_mode_label = customtkinter.CTkLabel(self.sidebar_frame, text="Appearance Mode:", anchor="w")
         self.appearance_mode_label.grid(row=5, column=0, padx=20, pady=(10, 0))
-        self.appearance_mode_optionemenu = customtkinter.CTkOptionMenu(self.sidebar_frame,values=["Light", "Dark"], command=self.change_appearance_mode_event)
+        self.appearance_mode_optionemenu = customtkinter.CTkOptionMenu(self.sidebar_frame,values=["Dark", "Light"], command=self.change_appearance_mode_event)
         self.appearance_mode_optionemenu.grid(row=6, column=0, padx=20, pady=(10, 10))
         self.scaling_label = customtkinter.CTkLabel(self.sidebar_frame, text="Scaling:", anchor="w")
         self.scaling_label.grid(row=7, column=0, padx=20, pady=(10, 0))
-        self.scaling_optionemenu = customtkinter.CTkOptionMenu(self.sidebar_frame, values=["80%", "90%", "100%", "110%", "120%"], command=self.change_scaling_event)
+        self.scaling_optionemenu = customtkinter.CTkOptionMenu(self.sidebar_frame, values=["100%", "110%", "120%"], command=self.change_scaling_event)
         self.scaling_optionemenu.grid(row=8, column=0, padx=20, pady=(10, 20))
 
     def change_appearance_mode_event(self, new_appearance_mode: str):
@@ -51,7 +51,13 @@ class App(customtkinter.CTk):
         customtkinter.set_widget_scaling(new_scaling_float)
 
     def Backup_button_event1(self):
-        print("Backup")
+        self.Middle_frame = customtkinter.CTkFrame(self, width=850,height=500,corner_radius=10)
+        self.Middle_frame.grid(row = 0,column=3,sticky = "" )
+        #self.File_Path = customtkinter.CTkEntry(self.Middle_frame,width=700,height=24, corner_radius=10)
+        #self.File_Path .grid(row=1, column=0, padx=20, pady=10)
+
+
+
     def CUID_button_event2(self):
         print("Create User ID")
 
