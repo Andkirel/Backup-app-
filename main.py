@@ -1,3 +1,4 @@
+import tkinter
 import customtkinter
 
 customtkinter.set_appearance_mode("Dark")
@@ -51,10 +52,8 @@ class App(customtkinter.CTk):
         customtkinter.set_widget_scaling(new_scaling_float)
 
     def Backup_button_event1(self):
-        self.Middle_frame = customtkinter.CTkFrame(self, width=850,height=500,corner_radius=10)
-        self.Middle_frame.grid(row = 0,column=3,sticky = "" )
-        #self.File_Path = customtkinter.CTkEntry(self.Middle_frame,width=700,height=24, corner_radius=10)
-        #self.File_Path .grid(row=1, column=0, padx=20, pady=10)
+       Backup = BackupButton()
+        Backup()
 
 
 
