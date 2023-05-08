@@ -1,5 +1,8 @@
-import tkinter
+from Backupbutton import Backupbutton
+from Help_Button import Help_Button
+from Create_User import Create_User
 import customtkinter
+import tkinter
 
 customtkinter.set_appearance_mode("Dark")
 customtkinter.set_default_color_theme("green")
@@ -36,36 +39,25 @@ class App(customtkinter.CTk):
         self.sidebar_button_2.grid(row=3, column=0, padx=20, pady=10)
 #Side Menu OptionMenu's
         self.appearance_mode_label = customtkinter.CTkLabel(self.sidebar_frame, text="Appearance Mode:", anchor="w")
-        self.appearance_mode_label.grid(row=5, column=0, padx=20, pady=(10, 0))
+        self.appearance_mode_label.place(relx=0.5, rely=0.85, anchor=tkinter.CENTER)
         self.appearance_mode_optionemenu = customtkinter.CTkOptionMenu(self.sidebar_frame,values=["Dark", "Light"], command=self.change_appearance_mode_event)
-        self.appearance_mode_optionemenu.grid(row=6, column=0, padx=20, pady=(10, 10))
-        self.scaling_label = customtkinter.CTkLabel(self.sidebar_frame, text="Scaling:", anchor="w")
-        self.scaling_label.grid(row=7, column=0, padx=20, pady=(10, 0))
-        self.scaling_optionemenu = customtkinter.CTkOptionMenu(self.sidebar_frame, values=["100%", "110%", "120%"], command=self.change_scaling_event)
-        self.scaling_optionemenu.grid(row=8, column=0, padx=20, pady=(10, 20))
+        self.appearance_mode_optionemenu.place(relx=0.5, rely=0.90, anchor=tkinter.CENTER)
+
+
 
     def change_appearance_mode_event(self, new_appearance_mode: str):
         customtkinter.set_appearance_mode(new_appearance_mode)
-
-    def change_scaling_event(self, new_scaling: str):
-        new_scaling_float = int(new_scaling.replace("%", "")) / 100
-        customtkinter.set_widget_scaling(new_scaling_float)
-
     def Backup_button_event1(self):
-       Backup = BackupButton()
-        Backup()
-
-
-
+        Backupbutton.BackupB(self)
     def CUID_button_event2(self):
-        print("Create User ID")
-
+        Create_User.UserB(self)
     def Help_button_event3(self):
-        print("Help")
+        Help_Button.helpB(self)
 
 
 
 if __name__ == "__main__":
     app = App()
     app.mainloop()
+
 
