@@ -8,7 +8,7 @@ cur = conn.cursor()
 
 cur.execute("""CREATE TABLE IF NOT EXISTS useraccount(UserID VARCHAR(10) PRIMARY KEY,Pin INT)""")
 
-cur.execute("""INSERT INTO useraccount (UserID, Pin) VALUES """)
+#cur.execute("""INSERT INTO useraccount (UserID, Pin) VALUES """)
 
 conn.commit()
 

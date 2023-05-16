@@ -10,6 +10,7 @@ customtkinter.set_default_color_theme("green")
 class App(customtkinter.CTk):
     def __init__(self):
         super().__init__()
+
         #logo, title and window size
         self.title("Guardian")
         self.geometry("1100x580")
