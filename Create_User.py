@@ -2,12 +2,11 @@ import customtkinter
 import tkinter
 import re
 
+
 class Create_User:
 
     def UserB(self,app):
         self.app = app
-        UserName = self.app.Username_entry.get()
-        self.UserName = UserName
 
         app.Middle_frame_UB = customtkinter.CTkFrame(app, width=850, height=500, corner_radius=10)
         app.Middle_frame_UB.place(relx=0.585, rely=0.45, anchor=tkinter.CENTER)
