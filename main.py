@@ -49,9 +49,9 @@ class App(customtkinter.CTk):
     def change_appearance_mode_event(self, new_appearance_mode: str):
         customtkinter.set_appearance_mode(new_appearance_mode)
     def Backup_button_event1(self):
-        Backupbutton.BackupB(self)
+        Backupbutton().BackupB(self)
     def CUID_button_event2(self):
-        Create_User.UserB(self)
+        Create_User().UserB(self)
     def Help_button_event3(self):
         Help_Button.helpB(self)
 
