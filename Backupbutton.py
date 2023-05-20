@@ -28,12 +28,14 @@ class Backupbutton:
         backup.Delete_Local_File.place(relx=0.3, rely=0.5, anchor=tkinter.CENTER)
 
     def ZIPFile(self):
-        Filepath2 = self.backup.File_entry2.get()
-        self.File_path2 = Filepath2
+
         Filepath1 = self.backup.File_entry1.get()
+        Filepath2 = self.backup.File_entry2.get()
+
         self.File_path1 = Filepath1
-        self.folder1 = pathlib.Path(self.File_path1)
-        self.folder2 = pathlib.Path(self.File_path2)
+        self.File_path2 = Filepath2
+
         with ZipFile('backup.zip','w') as zip:
-         for file in self.folder1.iterdir() and self.folder2.iterdir():
-            zip.write(file)
+         for folder in [self.File_path1, self.File_path2]:
+             for file in pathlib.Path(folder).iterdir():
+              zip.write(file)

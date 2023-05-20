@@ -29,8 +29,12 @@ class Create_User:
 
     def PinChecking(self):
         number_checker = re.compile(r'\d\d\d\d')
+
         Pins = self.app.Pin_entry.get()
         self.Pins = Pins
+        UserID = self.app.Username_entry
+        self.UserID = UserID
+
         CPins = self.app.CPin_entry.get()
         if CPins != Pins or not number_checker.match(Pins) or not number_checker.match(CPins):
             self.app.Answer.configure(text="The pins do not match or is not 4 digits")

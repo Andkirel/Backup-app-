@@ -53,7 +53,7 @@ class App(customtkinter.CTk):
     def CUID_button_event2(self):
         Create_User().UserB(self)
     def Help_button_event3(self):
-        Help_Button.helpB(self)
+        Help_Button().helpB(self)
 
 
 
