@@ -21,11 +21,14 @@ class Backupbutton:
         backup.Backup_Button = customtkinter.CTkButton(backup.Middle_frame, text="Start Backup", width=170, height=50, command=self.ZIPFile)
         backup.Backup_Button.place(relx=0.87, rely=0.9, anchor=tkinter.CENTER)
 
-        backup.Zip_The_File = customtkinter.CTkCheckBox(backup.Sub_frame, width=100, height=100, text="Compress File")
-        backup.Zip_The_File.place(relx=0.7, rely=0.5, anchor=tkinter.CENTER)
+        backup.LABEL = customtkinter.CTkLabel(backup.Sub_frame, text="Account data will be stored in", anchor="w",font=customtkinter.CTkFont(size=24, weight="bold"))
+        backup.LABEL.place(relx=0.5, rely=0.2, anchor=tkinter.CENTER)
 
-        backup.Delete_Local_File = customtkinter.CTkCheckBox(backup.Sub_frame, width=100, height=100, text="Delete the local files")
-        backup.Delete_Local_File.place(relx=0.3, rely=0.5, anchor=tkinter.CENTER)
+        backup.USER = customtkinter.CTkEntry(backup.Sub_frame, width=250, height=25, placeholder_text="Username")
+        backup.USER.place(relx=0.5, rely=0.4, anchor=tkinter.CENTER)
+
+        backup.PIN = customtkinter.CTkEntry(backup.Sub_frame, width=250, height=25, placeholder_text="PIN")
+        backup.PIN.place(relx=0.5, rely=0.6, anchor=tkinter.CENTER)
 
     def ZIPFile(self):
 
