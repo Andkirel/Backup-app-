@@ -14,7 +14,6 @@ class Backupbutton:
 
         backup.File_entry1 = customtkinter.CTkEntry(backup.Middle_frame, width=450,height=25,corner_radius=10, placeholder_text="File Path")
         backup.File_entry1.place(relx=0.5, rely=0.2, anchor=tkinter.CENTER)
-
         backup.File_entry2 = customtkinter.CTkEntry(backup.Middle_frame, width=450, height=25,corner_radius=10, placeholder_text="File Path")
         backup.File_entry2.place(relx=0.5, rely=0.3, anchor=tkinter.CENTER)
 
@@ -26,9 +25,13 @@ class Backupbutton:
 
         backup.USER = customtkinter.CTkEntry(backup.Sub_frame, width=250, height=25, placeholder_text="Username")
         backup.USER.place(relx=0.5, rely=0.4, anchor=tkinter.CENTER)
-
         backup.PIN = customtkinter.CTkEntry(backup.Sub_frame, width=250, height=25, placeholder_text="PIN")
         backup.PIN.place(relx=0.5, rely=0.6, anchor=tkinter.CENTER)
+
+        backup.Answer = customtkinter.CTkLabel(backup.Middle_frame, text='',font=customtkinter.CTkFont(size=24, weight="bold"))
+        backup.Answer.place(relx=0.5, rely=0.9, anchor=tkinter.CENTER)
+
+
 
     def ZIPFile(self):
 
@@ -38,7 +41,9 @@ class Backupbutton:
         self.File_path1 = Filepath1
         self.File_path2 = Filepath2
 
-        with ZipFile('backup.zip','w') as zip:
+        self.backup.Answer.configure(text="Backup Complete")
+
+        with ZipFile('backups.zip','w') as zip:
          for folder in [self.File_path1, self.File_path2]:
              for file in pathlib.Path(folder).iterdir():
               zip.write(file)
